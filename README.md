@@ -7,7 +7,12 @@ Type inference tool
 ===================
 Derives a polymorphic well-typing for a given program.
 
-Runs in SICStus Prolog, Ciao-Prolog and SWI-Prolog (others not tried yet).
+Runs in Ciao-Prolog 
+
+Requirements
+============
+
+Library chclibs (https://github.com/bishoksan/chclibs)
 
 Usage
 =====
