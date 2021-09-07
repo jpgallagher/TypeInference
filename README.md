@@ -45,10 +45,10 @@ where options are
 References
 ==========
 Maurice Bruynooghe, John P. Gallagher, Wouter Van Humbeeck:
-Inference of Well-Typings for Logic Programs with Application to Termination Analysis. SAS 2005: 35-51
+Inference of Well-Typings for Logic Programs with Application to Termination Analysis. SAS 2005: 35-51.
 DOI 10.1007/978-3-540-27775-0_3
 
-@inproceedings{DBLP:conf/iclp/GallagherH04,
+"@inproceedings{DBLP:conf/iclp/GallagherH04,
   author    = {John P. Gallagher and
                Kim S. Henriksen},
   editor    = {Bart Demoen and
@@ -66,7 +66,7 @@ DOI 10.1007/978-3-540-27775-0_3
   timestamp = {Tue, 14 May 2019 10:00:48 +0200},
   biburl    = {https://dblp.org/rec/conf/iclp/GallagherH04.bib},
   bibsource = {dblp computer science bibliography, https://dblp.org}
-}
+}"
 
 
 (c) Roskilde University,  2004 - 2021
