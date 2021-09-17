@@ -12,6 +12,8 @@ Runs in Ciao-Prolog
 ## Requirements
 
 Library chclibs (https://github.com/bishoksan/chclibs)
+CiaoPP libraries (for the file reader).  
+(See comment in src/genconstraints.pl to use the chclibs reader without CiaoPP).
 
 ## Usage
 
@@ -23,7 +25,7 @@ Library chclibs (https://github.com/bishoksan/chclibs)
 ?- types(+Filename,TypeDefs,Signatures)
 ```
 
-To run a number of tests, type
+To run a number of tests (assuming Test folder is at the same level as program), type
 
 ```
 ?- test.
