@@ -1,5 +1,4 @@
 % Type inference system (designed by M. Bruynooghe and J. Gallagher)
-% Version 1.3 created by jpg on 08/08/2006
 % (c) Roskilde University
  
 :- module(solveconstraints, [
@@ -14,12 +13,12 @@ solveconstraints(Cs,TDefs,Sigs0,Sigs2,V0,V2) :-
 	V1 is V0-1,
 	initEqClasses(V1,root,Es0),
 	addConstraints(Cs,Es0,Es1,V0,V2),
-	end_time('Time to solve: ', user_output),
+	%end_time('Time to solve: ', user_output),
 	traverse_tree(Es1,AllTypes),
 	allTypeDefs(AllTypes,Es1,Ts),
 	substClasses(Sigs0,Sigs1,Es1),
-	parameterise(Ts,TDefs,Sigs1,Sigs2),
-	end_time('Time to parametrise: ', user_output).
+	parameterise(Ts,TDefs,Sigs1,Sigs2).
+	%end_time('Time to parameterise: ', user_output).
 	
 initEqClasses(V,Es0,Es0) :-
 	V < 0.

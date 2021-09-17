@@ -12,23 +12,16 @@
 :- use_module(genregtype).
 :- use_module(chclibs(timer_ciao)).
 
+:- dynamic verbose/0.
 	
 main(ArgV) :-
-	start_time,
 	get_options(ArgV,Options,[F|_]),
+	(member(verbose,Options) -> start_time; true),
 	types(F,TDefs,Signatures),
 	outputFileStream(Options,Stream),
-	write(Stream, 'Type definitions'), 
-	nl(Stream),
-	nl(Stream),
-	writeTypeDefs(TDefs,Stream),
-	nl(Stream),
-	write(Stream, 'Signatures'), nl(Stream),
-	writeList(Signatures,Stream),
-	nl(Stream),
-	nl(Stream),
+	writeTypes(Stream,TDefs,Signatures),
 	close(Stream),
-	end_time('Time for writing out types: ',user_output),
+	(member(verbose,Options) -> end_time('Time: ',user_output); true),
 	writeRegtypefile(TDefs,Options).
 	
 % optionally write out types as a regular type
@@ -58,7 +51,8 @@ get_options([X|T],Options,Args) :-
 
 recognised_option('-o',output_file(OF),[OF]).
 recognised_option('-regtype',regtypefile(R),[R]).
-%recognised_option('-t',timeout(OF),[OF]).
+recognised_option('-v',verbose,[]).
+
 
 outputFileStream(Options,S) :-
 	member(output_file(F),Options),
@@ -69,14 +63,21 @@ outputFileStream(_,user_output).
 
 types(F,TDefs,Signatures) :-
 	genconstraints(F,Cs,Sigs0,V),
-	end_time('Time for reading file and generating constraints: ',user_output),
 	solveconstraints(Cs,TDefs,Sigs0,Signatures,V,_).
-	
 	
 types(F) :-
 	main([F]).
 	
-	
+writeTypes(Stream,TDefs,Signatures) :-
+	write(Stream, 'Type definitions'), 
+	nl(Stream),
+	nl(Stream),
+	writeTypeDefs(TDefs,Stream),
+	nl(Stream),
+	write(Stream, 'Signatures'), nl(Stream),
+	writeList(Signatures,Stream),
+	nl(Stream),
+	nl(Stream).
 	
 	
 %--------------
