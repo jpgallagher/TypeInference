@@ -1,5 +1,4 @@
 % Type inference system (designed by M. Bruynooghe and J. Gallagher)
-% Version 1.3 created by jpg on 08/08/2006
 % (c) Roskilde University
  
 :- module(types, [types/1, types/3, test/0, main/1]).
