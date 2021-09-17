@@ -4,7 +4,8 @@
 :- module(genconstraints, [
 	genconstraints/4]).
 
-:- use_module(chclibs(ciaopp/readprog_ciaopp)).
+:- use_module(chclibs(ciaopp/readprog_ciaopp)). % remove if using next line
+%:- use_module(chclibs(readprog)).				% uncomment to use chclibs file reader
 :- use_module(library(lists)).
 
 
