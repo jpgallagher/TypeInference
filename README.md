@@ -20,7 +20,7 @@ Library chclibs (https://github.com/bishoksan/chclibs)
 % prolog
 
 ?- use_module(types).
-?- types(+Filename,TDefs,Signatures)
+?- types(+Filename,TypeDefs,Signatures)
 ```
 
 To run a number of tests, type
