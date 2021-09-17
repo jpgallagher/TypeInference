@@ -11,8 +11,8 @@ Runs in Ciao-Prolog
 
 ## Requirements
 
-Library chclibs (https://github.com/bishoksan/chclibs)
-CiaoPP libraries (for the file reader).  
+* Library chclibs (https://github.com/bishoksan/chclibs)
+* CiaoPP libraries (for the file reader).  
 (See comment in src/genconstraints.pl to use the chclibs reader without CiaoPP).
 
 ## Usage
